@@ -121,10 +121,14 @@ for name, model in models.items():
 # ===============================
 # 9. Save best model
 # ===============================
+print("\nBest model:", best_name)
+print("Accuracy:", best_score)
+
 model_dir = "../model"
 
 os.makedirs(model_dir, exist_ok=True)
 
+# Save best model
 joblib.dump(best_model, f"{model_dir}/product_classifier.pkl")
 
-print("Model saved in root /model folder!")
+print("Model and vectorizer saved in root /model folder!")
